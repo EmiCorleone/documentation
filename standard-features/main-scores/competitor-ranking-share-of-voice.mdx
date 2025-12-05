@@ -3,5 +3,60 @@ title: "Competitor Ranking - Share of Voice"
 description: "Compare your AI visibility against competitors and track share of voice."
 ---
 
-Document how you attribute competitor rankings, calculate share of voice, and interpret movements over time. Note any competitive sets or segments that matter most to stakeholders.
+<img
+  src="/images/CompetitorRanking.png"
+  alt="Competitor Ranking table showing Share of Voice by company"
+  style={{
+    borderRadius: '0.75rem',
+    margin: '1.5rem 0',
+    maxHeight: '460px',
+    width: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  }}
+/>
+
+The **Share of Voice (SOV)** ranking shows how much “AI airtime” each company gets compared to everyone else in your space, **including you**.
+
+It answers:
+
+> “Out of all the brand mentions across our tracked prompts, how much belongs to us vs each competitor?”
+
+We always include **your brand** in this calculation, even if you have **0%**, so you can see your real position in the market.
+
+---
+
+## How Share of Voice is calculated
+
+We look at mentions across **all tracked prompts** and **all providers**.
+
+For each company (your brand + every competitor):
+
+1. **Count mentions**
+   - `Company Mentions` = how many times that company is mentioned in the results across all prompts/providers.
+2. **Calculate total mentions**
+   - `Total Mentions` = sum of mentions for **your brand + all competitors**.
+3. **Compute Share of Voice**
+
+$\text{Company Share of Voice} = \frac{\text{Company Mentions}}{\text{Total Mentions}} \times 100$
+
+This is done for **every** company (you + all competitors). Then we sort the companies from highest to lowest Share of Voice to build the **Competitor Rankings** table.
+
+> If your brand has 0 mentions, you still appear in the table with 0%, at the bottom of the ranking.
+
+---
+
+## How to read it
+
+- **Top of table (high %)** – You dominate the AI conversation for these prompts; focus on defending position and improving sentiment.
+- **Middle of table (mid %)** – You share the stage; target prompts/providers where you lag to win incremental share.
+- **Bottom of table (low % or 0%)** – You’re rarely mentioned; prioritize coverage for critical prompts so you at least enter the conversation.
+
+## Why it matters
+
+- **Market reality check** – Shows your true AI footprint versus peers on the prompts you track.
+- **Opportunity targeting** – Highlights which competitors and prompts to attack to gain quick SOV wins.
+- **Trend tracking** – Watch your SOV move after new content or agent deployments.
+
+---
 

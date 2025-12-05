@@ -1,7 +1,84 @@
 ---
 title: "Average Position"
-description: "Monitor average ranking positions for your AI results."
+description: "Track how high your brand appears in AI answers across tracked prompts."
 ---
 
-Capture how you calculate average position, which surfaces are included, and how often the metric is refreshed. Include any benchmarks or thresholds that define success.
+<img
+  src="/images/AveragePositionPhoto.png"
+  alt="Average Position sample card"
+  style={{
+    borderRadius: '0.75rem',
+    margin: '1.5rem 0',
+    maxHeight: '460px',
+    width: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  }}
+/>
+
+## What is it?
+
+The **Average Position** score tells you *where* your brand tends to appear in AI answers when it is mentioned. While **AI Visibility** answers “Do we show up at all?”, Average Position answers:
+
+> “When we do show up, how high or low are we in the answer?”
+
+Lower is better:
+- `1` means you’re usually mentioned first.
+- `3` means you’re usually around third.
+- Higher numbers mean you appear later in the answer.
+
+---
+
+## How Average Position is calculated (per prompt)
+
+For each **tracked prompt**, Mudra:
+1. Runs the prompt across multiple AI providers (for example: ChatGPT, Claude, Gemini, Perplexity).
+2. Keeps only responses where your brand is mentioned and a position has been assigned (1st, 2nd, 3rd, etc.).
+3. Collects the list of positions, like: `positions = [2, 4, 3]`
+4. Computes the average of those positions:
+
+$\text{Average Position (for this prompt)} = \frac{\text{sum of positions}}{\text{number of positions}}$
+
+If your brand is **not mentioned** in any provider for that prompt, the Average Position for that prompt is not available.
+
+---
+
+## Example: Average Position for one prompt
+
+Prompt:
+> “Best AI platforms for marketing automation?”
+
+You run this prompt on 4 providers and get:
+
+| Provider   | Brand mentioned? | Position |
+| ---        | ---              | ---      |
+| ChatGPT    | Yes              | 2        |
+| Claude     | Yes              | 4        |
+| Gemini     | No               | —        |
+| Perplexity | Yes              | 3        |
+
+Step by step:
+- Keep only providers where your brand was mentioned: `positions = [2, 4, 3]`
+- Sum: `2 + 4 + 3 = 9`
+- Count: `3`
+- Average Position:
+
+$\text{Average Position} = \frac{9}{3} = 3.0$
+
+Result: For this prompt, your **Average Position is `3.0`**. Whenever you are mentioned, you appear **around third** on average. If none of the providers had mentioned you, the Average Position for this prompt would be not available.
+
+---
+
+## Overall Average Position (across prompts)
+
+Mudra also shows an **overall Average Position** for the project.
+
+To compute it, Mudra:
+1. First computes **Average Position per prompt** (as above).
+2. Builds a list of **valid** averages (ignoring prompts with empty referencing): $[\text{avg\_pos}_1, \text{avg\_pos}_2, \dots, \text{avg\_pos}_n]$
+3. Computes the average of those values:
+
+$\text{Overall Average Position} = \frac{\text{sum of valid prompt averages}}{\text{number of prompts with a valid average}}$
+
+If **all** prompts are `null` (your brand is never mentioned), the Overall Average Position is also `null`.
 

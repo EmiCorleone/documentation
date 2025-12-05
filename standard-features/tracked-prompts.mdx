@@ -1,8 +1,121 @@
 ---
 title: "Tracked Prompts"
-description: "Keep a history of critical prompts and monitor their outcomes."
+description: "Tracked Prompts are the questions Mudra asks AI models on your behalf to measure your AI Visibility, position, and Share of Voice."
 icon: "message-dots"
 ---
 
-Describe how prompts are collected, versioned, and evaluated. Call out the KPIs you track (success rate, latency, satisfaction) and any alerting thresholds.
+<img
+  src="/images/trackedPrompts.png"
+  alt="Tracked Prompts sample card"
+  style={{
+    borderRadius: '0.75rem',
+    margin: '1.5rem 0',
+    maxHeight: '400px',
+    width: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  }}
+/>
 
+## Why are they important?
+
+They are the backbone of how Mudra measures your AI Visibility, position, and Share of Voice. By designing them intentionally, you make sure Mudra is measuring you on the same kinds of questions your buyers actually ask in tools like ChatGPT, Perplexity, or Claude.
+
+---
+
+## What is a tracked prompt?
+
+A tracked prompt is a natural-language question or query you care about, such as:
+
+- "best [category] tools for [ICP]"
+- "[your brand] vs [competitor]"
+- "what is [your brand]?"
+- "how to [problem you solve]"
+
+Behind the scenes, Mudra stores these prompts for your brand profile and regularly re-runs them across supported AI models to keep track whether your AI Visibility is increasing.
+
+### For each prompt, Mudra records:
+
+- **Whether your brand is mentioned at all**
+- **Where you appear in the answer** (your position if you're listed among options)
+- **Which competitors are mentioned alongside you**
+- **The tone of the answer** (positive, neutral, or negative)
+- **A visibility score from 0–100** that summarizes how strongly you show up for that prompt
+
+Over time, Mudra compares these results so you can see how your presence in AI answers is changing.
+
+---
+
+## Prompt types
+
+You can group tracked prompts into types that mirror how real buyers search. Common types in Mudra include:
+
+- **Brand Specific Prompt**
+  Direct questions about your brand, e.g. "what is [your brand]?", "[your brand] reviews", "[your brand] alternatives".
+
+- **Organic discovery prompts**
+  Open-ended "best tools" questions in your market, e.g. "best [category] platforms for [ICP]".
+
+- **Comparison competitor prompts**
+  "[your brand] vs [competitor]" or "alternatives to [competitor]" style queries that show how you're positioned against others.
+
+- **How‑to / problem prompts**
+  Questions framed around the problems you solve, e.g. "how to [problem]", "tools to [outcome]".
+
+Mudra uses these types to help you see where you are strong (for example, brand terms) and where you may be invisible (for example, category or comparison terms).
+
+---
+
+## How many prompts do I start with?
+
+**Startup Plan:**
+- Startup plans begin with **50 tracked prompts** for tracking.
+- Mudra allows for the user to add another 50 Prompts, making a total of 100 Prompts.
+
+**Growth Stage Plan:**
+- Growth Stage Plan begin with 300 **tracked prompts** for tracking.
+- Mudra allows for the user to add another 200 Prompts, making a total of 500 Prompts.
+
+**Enterprise Plan:**
+- Custom Limits
+
+---
+
+## Best practices
+
+- **Write prompts like a real user.**
+  Avoid internal jargon. Use the phrases your ideal customers would actually type into an AI assistant.
+
+- **Cover each stage of intent.**
+  Include:
+  - Discovery prompts ("best tools for…")
+  - Evaluation prompts ("[brand] vs [competitor]")
+  - Decision prompts ("is [brand] worth it?", "[brand] pricing")
+
+- **Balance brand and non‑brand queries.**
+  Track both prompts that mention your name and prompts where buyers don't know you yet but should discover you.
+
+- **Revisit prompts periodically.**
+  As your product, ICP, or messaging evolves:
+  - Retire prompts that no longer reflect your strategy.
+  - Add new prompts for new use cases, features, or competitor shifts.
+
+---
+
+## How tracked prompts drive Mudra
+
+Tracked Prompts power multiple parts of Mudra's analysis:
+
+- **Core visibility metrics**
+  For each prompt, Mudra calculates whether you were mentioned, your position, competitor mentions, sentiment, and a **visibility score (0–100)**. These per‑prompt scores are then aggregated into your overall **AI Visibility** and related metrics.
+
+- **Share of Voice and competitor context**
+  By looking at which competitors are mentioned across all your tracked prompts, Mudra estimates how much "space" you and each competitor occupy in AI answers for your market.
+
+- **Content strategy and experiments**
+  The prompts where you are weak or missing entirely often become the best candidates for:
+  - New content or campaigns
+  - Comparison and "versus" pages
+  - Messaging experiments
+
+By curating your tracked prompts, you are effectively telling Mudra: **"These are the questions that matter most for our AI presence. Measure us here, and help us improve here first."**

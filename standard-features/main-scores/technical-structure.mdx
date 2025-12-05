@@ -1,7 +1,96 @@
 ---
-title: "Technical Structure"
-description: "Evaluate crawlability, schema, and structure for AI readiness."
+title: "Technical Structure Score"
+description: "How AI-ready your site is at the infra level."
 ---
 
-Summarize how you assess the technical foundations that influence AI surfaces. Document checks for schema coverage, metadata quality, page performance, and any blockers that affect indexation.
+<img
+  src="/images/TechnicalStructureImage.png"
+  alt="Technical Structure Score sample chart"
+  style={{
+    borderRadius: '0.75rem',
+    margin: '1.5rem 0',
+    maxHeight: '460px',
+    width: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  }}
+/>
+
+## Score overview
+
+The **Technical Structure Score** measures how AI-ready your site is at the infra level. Instead of looking at just one thing (like schema or metadata), Mudra evaluates each page across five dimensions and then combines them into a single score. Each page is scored from **0–100**, and Mudra then aggregates page scores into a project-level Technical Structure Score.
+
+## Per-page scoring dimensions
+
+For every crawled page, Mudra evaluates five dimensions:
+
+1. **Metadata Score**
+   - Quality and presence of title and meta description
+   - Basic alignment with page content and intent
+
+2. **Heading Hierarchy Score**
+   - Presence of a clear `h1`
+   - Logical heading hierarchy (`h1` → `h2` → `h3`, etc.)
+   - Avoiding missing or chaotic heading structures
+
+3. **Semantic HTML5 Score**
+   - Use of meaningful elements (`main`, `section`, `article`, `nav`, etc.)
+   - Avoiding everything being wrapped in generic `div`s with no structure
+
+4. **Structured Schema Score**
+   - Presence and correctness of structured data (for example, `Organization`, `Product`, `FAQPage`, etc.)
+   - Coverage of key entity types relevant to your site
+   - Validity and consistency
+
+5. **FAQ Score**
+   - Presence of FAQ sections where appropriate
+   - Use of FAQ patterns that help models map questions → answers
+   - Alignment with real user questions / tracked prompts
+
+Each dimension is scored between **0 and 100** for that page.
+
+---
+
+## Per-page total score formula
+
+Once each dimension is scored, Mudra combines them using weighted contributions:
+
+$\text{Page Score} =
+(\text{Metadata} \times 0.20) +
+(\text{Headings} \times 0.20) +
+(\text{Semantic HTML} \times 0.15) +
+(\text{Schema} \times 0.30) +
+(\text{FAQ} \times 0.15)$
+
+Where:
+- **Metadata** = Metadata Score (0–100)
+- **Headings** = Heading Score (0–100)
+- **Semantic HTML** = Semantic HTML Score (0–100)
+- **Schema** = Schema Score (0–100)
+- **FAQ** = FAQ Score (0–100)
+
+The result is a **Page Score between 0 and 100**.
+
+---
+
+## Why these weights?
+
+The weights reflect how important each dimension is for AI understanding:
+
+- **Schema (30%)** – Schema is often the most direct machine-readable signal; it’s weighted the highest.
+- **Metadata (20%) + Headings (20%)** – Titles and headings define what the page is “about” and how it’s structured.
+- **Semantic HTML (15%)** – Good HTML structure helps models parse content more reliably.
+- **FAQ (15%)** – FAQ-style blocks map directly to how people and models ask questions.
+
+Together, they form a balanced view of how friendly each page is to AI crawlers and retrievers.
+
+---
+
+## From page scores to project score
+
+Mudra then aggregates per-page scores into a single **Technical Structure Score** for your project. By default, this is calculated as the average Page Score across the set of key pages Mudra crawls for your domain (for example, core product pages, pricing, docs, and other top surfaces).
+
+This gives you a single number between **0 and 100** that reflects:
+
+> “On average, how well structured is our site for AI systems to crawl, parse, and reuse?”
 

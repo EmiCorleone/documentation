@@ -1,7 +1,61 @@
 ---
-title: "AI Visibility"
-description: "Track how visible your AI experiences are across surfaces."
+title: "AI Visibility Score"
+description: "How often your brand is mentioned by AI models for the prompts that matter."
 ---
 
-Use this page to define how AI-driven experiences are discovered and measured. Outline the visibility signals you monitor, the sources you ingest, and the key thresholds that matter for your teams.
+<img
+  src="/images/AIvisibilityScore.png"
+  alt="AI Visibility Score sample chart"
+  style={{
+    borderRadius: '0.75rem',
+    margin: '1.5rem 0',
+    maxHeight: '460px',
+    width: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  }}
+/>
+
+## What is it?
+
+The **AI Visibility Score** tells you how often your brand is mentioned by AI models for the prompts you care about. At its core, it’s a simple ratio:
+
+> Out of all the prompts we asked, in how many did your company get mentioned?
+
+---
+
+## Formula
+
+For a given project and scan:
+
+- **Prompts mentioned** = number of tracked prompts where your brand appears in the AI answer
+- **Prompts queried** = total number of tracked prompts we ran in that scan
+
+The score is:
+
+$\text{AI Visibility} = \frac{\text{Prompts mentioned}}{\text{Prompts queried}} \times 100$
+
+This produces a value between **0 and 100**.
+
+---
+
+## Example
+
+- Prompts queried: `40`
+- Prompts mentioned: `22`
+
+$\text{AI Visibility} = \frac{22}{40} \times 100 = 55$
+
+In this case, your AI Visibility Score is **55**, which means your brand shows up in **55%** of the questions you told Mudra to care about.
+
+---
+
+## How to read it
+
+- **0–20** – You’re largely invisible for your tracked prompts.
+- **20–60** – You show up sometimes, but inconsistently or only in certain areas.
+- **60–90** – You’re present for most key prompts; work on position and quality.
+- **90+** – You’re almost always mentioned; focus shifts to rank, sentiment, and Share of Voice.
+
+> AI Visibility doesn’t say *where* you appear in answers (that’s **Average Position** and **Deep Track Prompts view**) or how you compare to competitors (that’s **Share of Voice**). It answers a simpler yes/no question: **“Do we show up at all when it matters?”**
 

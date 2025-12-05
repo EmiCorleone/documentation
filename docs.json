@@ -60,7 +60,7 @@
           "agentic-features/content-lab",
           {
             "group": "Agent Lab",
-            "icon": "sparkles",
+            "icon": "robot",
             "pages": [
               "agentic-features/agent-lab/llms-txt-indexer-agent",
               "agentic-features/agent-lab/conversation-ragar-agent"

@@ -1,7 +1,58 @@
 ---
-title: "LLMS.TXT Indexer Agent"
-description: "Configure the agent that indexes llms.txt for discoverability."
+title: "LLMS.TXT Agent"
+description: "The LLMS.TXT Agent is an autonomous backend agent inside Agent Lab that generates and maintains a high-signal /llms.txt (and optionally /llms-full.txt) for your site. Its job is simple: turn your website into a compact, LLM-friendly index that makes it easier for AI models to understand, navigate, and cite your content."
 ---
 
-Document setup steps, required permissions, and the indexing cadence. Note how results are validated and where indexed artifacts are stored for downstream agents.
+<img
+  src="/images/llms.txtAgentr.png"
+  alt="LLMS.TXT Agent indexer status card"
+  style={{
+    borderRadius: '0.75rem',
+    margin: '1.5rem 0',
+    maxHeight: '440px',
+    width: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  }}
+/>
+
+---
+
+## What problem does the LLMS.TXT Agent solve?
+
+Models increasingly rely on live web data, but:
+
+- HTML is noisy and bloated  
+- Context windows are limited  
+- Important pages (pricing, docs, API, legal, product) are often buried
+
+Without a structured index, models may:
+
+- Miss your most important pages  
+- Misinterpret your pricing or product structure  
+- Overweight low-value content or outdated posts
+
+The LLMS.TXT Agent fixes this by maintaining a **compressed, opinionated map of your site** that models can read in one shot.
+
+---
+
+## How the agent works
+
+1) **Crawls and analyzes your site**  
+   Uses Mudra’s internal map of your content surface.
+
+2) **Selects and prioritizes URLs**  
+   Focuses on pages that:
+   - map to tracked prompts,
+   - carry strong structured data,
+   - or are strategically important for AI visibility.
+
+3) **Generates or updates `llms.txt`**  
+   Proposes additions, removals, or reorganizations of the index.
+
+4) **Ships changes safely**  
+   Depending on your setup, the agent can:
+   - Create suggestions inside Mudra,
+   - Open a GitHub pull request with changes,
+   - Or integrate with your deployment process.
 

@@ -9,6 +9,25 @@
   },
   "favicon": "/favicon.png",
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Community",
+          "icon": "users",
+          "href": "https://community.mudra.ai"
+        },
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "href": "https://www.trymudra.com/blog"
+        },
+        {
+          "anchor": "Research",
+          "icon": "flask",
+          "href": "https://research.mudra.ai"
+        }
+      ]
+    },
     "groups": [
       {
         "group": "Get Started",
@@ -62,12 +81,7 @@
     "dark": "/logo/Vector (9).png"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
+    "links": [],
     "primary": {
       "type": "button",
       "label": "Dashboard",
@@ -88,9 +102,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/TryMudra",
+      "linkedin": "https://www.linkedin.com/company/trymudra/"
     }
   }
 }

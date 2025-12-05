@@ -4,5 +4,61 @@ description: "Connect GitHub to sync repositories, deploy docs, and trigger agen
 icon: "github"
 ---
 
-Outline the installation steps, required scopes, and how events are consumed. Note where to configure webhooks, how deployments are triggered, and any best practices for managing multiple repos.
+<img
+  src="/images/GithubIntegrationn.png"
+  alt="GitHub integration card prompting install"
+  style={{
+    borderRadius: '0.75rem',
+    margin: '1.5rem 0',
+    width: '100%',
+    maxHeight: '420px',
+    objectFit: 'cover',
+  }}
+/>
+
+## GitHub Integration
+
+The GitHub integration lets Mudra’s agents ship changes to your codebase via pull requests instead of manual work.
+
+This is especially useful for:
+
+- Updating `llms.txt` or related AI-facing files
+- Adding or adjusting structured data (schema)
+- Making small technical tweaks that support AI visibility
+
+You stay in control of review and deployment; Mudra provides the proposed changes.
+
+---
+
+## Prerequisites
+
+To use the GitHub integration, you will need:
+
+- A GitHub account
+- A repository that backs your site (for example, your Next.js or other web framework repo)
+- Permission to install and authorize the Mudra GitHub app
+
+---
+
+## Setup
+
+1. In Mudra, go to **Integrations → GitHub**.
+2. Click **Connect GitHub**.
+3. Follow the authorization flow:
+   - Select the organization and repository you want to connect.
+   - Confirm the requested permissions (typically limited to creating pull requests).
+4. Save the configuration.
+
+Once connected, you can choose which agents are allowed to open PRs and for which repo(s).
+
+---
+
+## Security and access
+
+Mudra only needs the minimal scopes required to:
+
+- Read repository contents
+- Create branches and pull requests
+
+It does not merge PRs automatically.
 

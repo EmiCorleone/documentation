@@ -3,89 +3,63 @@
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#000000",
+    "light": "#FFFFFF",
+    "dark": "#111827"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "Get Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Standard Features",
+        "pages": [
           {
-            "group": "Getting started",
+            "group": "Main Scores",
+            "icon": "gauge",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "standard-features/main-scores/ai-visibility",
+              "standard-features/main-scores/technical-structure",
+              "standard-features/main-scores/average-position",
+              "standard-features/main-scores/competitor-ranking-share-of-voice"
             ]
           },
+          "standard-features/ai-referred-traffic",
+          "standard-features/natural-language-report",
+          "standard-features/tracked-prompts"
+        ]
+      },
+      {
+        "group": "Agentic Features",
+        "pages": [
+          "agentic-features/content-lab",
           {
-            "group": "Customization",
+            "group": "Agent Lab",
+            "icon": "sparkles",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "agentic-features/agent-lab/llms-txt-indexer-agent",
+              "agentic-features/agent-lab/conversation-ragar-agent"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "group": "Integrations",
+        "pages": [
+          "integrations/github"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/vector-black.png",
+    "dark": "/logo/Vector (9).png"
   },
   "navbar": {
     "links": [

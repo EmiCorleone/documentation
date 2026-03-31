@@ -49,6 +49,7 @@
               "standard-features/main-scores/competitor-ranking-share-of-voice"
             ]
           },
+          "standard-features/issues",
           "standard-features/ai-referred-traffic",
           "standard-features/natural-language-report",
           "standard-features/tracked-prompts"
@@ -58,14 +59,7 @@
         "group": "Agentic Features",
         "pages": [
           "agentic-features/content-lab",
-          {
-            "group": "Agent Lab",
-            "icon": "robot",
-            "pages": [
-              "agentic-features/agent-lab/llms-txt-indexer-agent",
-              "agentic-features/agent-lab/conversation-ragar-agent"
-            ]
-          }
+          "agentic-features/agent-lab/content-optimizer-agent"
         ]
       },
       {

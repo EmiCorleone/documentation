@@ -31,7 +31,7 @@ Lower is better:
 
 ## How Average Position is calculated (per prompt)
 
-For each **tracked prompt**, Mudra:
+For each **tracked prompt**, Morphiq Labs:
 1. Runs the prompt across multiple AI providers (for example: ChatGPT, Claude, Gemini, Perplexity).
 2. Keeps only responses where your brand is mentioned and a position has been assigned (1st, 2nd, 3rd, etc.).
 3. Collects the list of positions, like: `positions = [2, 4, 3]`
@@ -71,9 +71,9 @@ Result: For this prompt, your **Average Position is `3.0`**. Whenever you are me
 
 ## Overall Average Position (across prompts)
 
-Mudra also shows an **overall Average Position** for the project.
+Morphiq Labs also shows an **overall Average Position** for the project.
 
-To compute it, Mudra:
+To compute it, Morphiq Labs:
 1. First computes **Average Position per prompt** (as above).
 2. Builds a list of **valid** averages (ignoring prompts with empty referencing): $[\text{avg\_pos}_1, \text{avg\_pos}_2, \dots, \text{avg\_pos}_n]$
 3. Computes the average of those values:

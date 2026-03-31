@@ -1,0 +1,42 @@
+---
+title: "Content Optimizer"
+description: "Identifies low-scoring pages and creates optimization PRs with schema markup, FAQ sections, meta tags, and content improvements."
+icon: "wand-magic-sparkles"
+---
+
+## What it does
+
+The Content Optimizer is the agent behind most one-click fixes on the Issues page. It analyzes pages that score low on the Technical Structure Score and generates targeted fixes.
+
+---
+
+## What it fixes
+
+- **Schema Markup** — Adds or completes JSON-LD structured data with AEO-relevant schema types
+- **Metadata** — Fills in missing title tags, meta descriptions, canonical URLs, Open Graph, and Twitter Card tags
+- **FAQ Sections** — Generates FAQ content for eligible pages (home, pricing, features, product, solutions, blog)
+- **Content Quality** — Expands thin pages to meet minimum depth (300+ words, 3+ paragraphs)
+
+---
+
+## How it works
+
+1. Morphiq Labs identifies pages with low dimension scores
+2. The agent analyzes what is missing or incomplete on each page
+3. Generates the specific fixes needed
+4. Creates a GitHub pull request with the changes — or generates copy-ready code if GitHub is not connected
+
+---
+
+## Requirements
+
+- **GitHub connected** for automatic PR creation
+- Falls back to **Generate Code** output for no-code platforms (Webflow, Shopify, etc.)
+
+---
+
+## Triggering the agent
+
+**From Issues (recommended):** Click the **Fix** button on any Technical Structure issue. The Content Optimizer deploys automatically.
+
+**From Agent Lab:** Select Content Optimizer, choose your repository and branch, and click Deploy.

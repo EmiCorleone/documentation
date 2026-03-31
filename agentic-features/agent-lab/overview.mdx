@@ -1,0 +1,64 @@
+---
+title: "Agent Lab"
+description: "Background agents that fix issues, build AI-facing files, and surface opportunities."
+icon: "robot"
+---
+
+## How agents work
+
+Morphiq Labs agents run in the background and do one thing well. The most common way to trigger an agent is through the **Issues** page — click **Fix** on any issue and the right agent deploys automatically. You can also deploy agents manually from Agent Lab.
+
+---
+
+## Active agents
+
+### Content Optimizer
+
+Identifies low-scoring pages and creates optimization PRs with schema markup, FAQ sections, meta tags, and content improvements. This is the agent behind most one-click fixes on the Issues page.
+
+- **Duration:** ~5 min per 10 pages
+- **Impact:** High
+- **Requires:** GitHub connected
+
+### LLMs.txt Indexer
+
+Builds and maintains your `/llms.txt` and `/llms-full.txt` — a compact, AI-friendly index of your site that helps models discover and cite your most important pages.
+
+- **Duration:** ~3 min
+- **Impact:** High
+- **Requires:** GitHub connected
+
+### Conversation Radar
+
+Scans Reddit for high-signal discussions about your brand, competitors, and the problems you solve. Surfaces opportunities ranked by relevance (70+ threshold) and engagement.
+
+- **Duration:** ~4 min initial scan
+- **Impact:** High
+- **Standalone** (no GitHub required)
+
+---
+
+## Coming soon
+
+- **Robots Gatekeeper** — Manages crawler access rules (robots.txt)
+- **Schema Architect** — Adds and validates structured data
+- **Content Router** — Routes generated content to the right page/section
+- **FAQ Author** — Generates concise, trustworthy FAQ content
+- **Citations Outreach** — Tracks AI-cited sources and contacts authors for mentions
+
+---
+
+## Deploying from Issues (recommended)
+
+1. Open the **Issues** page after running an analysis
+2. Find an issue with the **Fix** button
+3. Click **Fix** — the right agent deploys automatically
+4. Review the generated PR or code output
+
+## Deploying from Agent Lab
+
+1. Connect your GitHub repository in **Integrations**
+2. Open **Agent Lab** and select an agent
+3. Choose the target repository and branch
+4. Click **Deploy**
+5. Track execution status — the agent creates a PR when done

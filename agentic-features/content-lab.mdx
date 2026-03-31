@@ -1,10 +1,10 @@
 ---
 title: "Content Lab"
-description: "Mudra's workspace for turning tracked prompts into citation-ready pages that AI models can easily quote."
+description: "Morphiq Labs's workspace for turning tracked prompts into citation-ready pages that AI models can easily quote."
 icon: "flask"
 ---
 
-Content Lab is Mudra's workspace for turning **tracked prompts** into **citation-ready pages**. It takes the sources AI models already cite, adds fresh research, and ships a structured article that's easy for models to quote.
+Content Lab is Morphiq Labs's workspace for turning **tracked prompts** into **citation-ready pages**. It takes the sources AI models already cite, adds fresh research, and ships a structured article that's easy for models to quote.
 
 <img
   src="/images/ContentLab.png"
@@ -27,7 +27,7 @@ Content Lab is Mudra's workspace for turning **tracked prompts** into **citation
 - **Source-aware:** Uses the same domains/URLs AI models cite, not random web pages.
 - **Structured for models:** One clear H1, logical H2/H3s, short paragraphs, optional schema suggestions.
 
-When you open Content Lab for a prompt, Mudra:
+When you open Content Lab for a prompt, Morphiq Labs:
 
 1. Runs that prompt across supported AI models.
 2. Captures their answers and cited sources (domains + URLs).
@@ -70,7 +70,7 @@ Result: A complete, GEO-optimized article saved to your campaigns with all sourc
 
 ## What you see in the UI
 
-- **Step 1:** Pick content type (Blog Post today; other formats next).
+- **Step 1:** Pick content type — General Blog Post, Listicle, How-To Guide, Comprehensive Guide, or Comparison.
 - **Step 2:** Pick the tracked prompt (by category or list).
 - **Step 3:** Pick the target audience/ICP.
 - **Step 4:** Review & toggle citation sources (needs at least 2).
@@ -89,13 +89,15 @@ Result: A complete, GEO-optimized article saved to your campaigns with all sourc
 
 ---
 
-## How the agents help
+## How the pipeline works
 
-- **Content Quality agent:** Enforces clear titles, upfront answers, evidence-backed claims, and E-E-A-T signals.
-- **Content Structure agent:** Keeps the heading hierarchy clean, paragraphs short, and suggests tables/lists/FAQs.
-- **Citation & Research agent:** Spots claims that need proof, pulls recent high-authority sources, and keeps citations tidy.
+Behind the scenes, Content Lab runs three stages to produce each draft:
 
-You keep final voice and accuracy; agents handle the heavy lifting so the draft is safe to cite and easy to reuse.
+- **Content Quality:** Enforces clear titles, upfront answers, evidence-backed claims, and E-E-A-T signals.
+- **Content Structure:** Keeps the heading hierarchy clean, paragraphs short, and suggests tables/lists/FAQs.
+- **Citation & Research:** Spots claims that need proof, pulls recent high-authority sources, and keeps citations tidy.
+
+You keep final voice and accuracy; the pipeline handles the heavy lifting so the draft is safe to cite and easy to reuse.
 
 ---
 

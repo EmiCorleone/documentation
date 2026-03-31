@@ -16,81 +16,76 @@ description: "How AI-ready your site is at the infra level."
   }}
 />
 
-## Score overview
+## What is it?
 
-The **Technical Structure Score** measures how AI-ready your site is at the infra level. Instead of looking at just one thing (like schema or metadata), Mudra evaluates each page across five dimensions and then combines them into a single score. Each page is scored from **0–100**, and Mudra then aggregates page scores into a project-level Technical Structure Score.
-
-## Per-page scoring dimensions
-
-For every crawled page, Mudra evaluates five dimensions:
-
-1. **Metadata Score**
-   - Quality and presence of title and meta description
-   - Basic alignment with page content and intent
-
-2. **Heading Hierarchy Score**
-   - Presence of a clear `h1`
-   - Logical heading hierarchy (`h1` → `h2` → `h3`, etc.)
-   - Avoiding missing or chaotic heading structures
-
-3. **Semantic HTML5 Score**
-   - Use of meaningful elements (`main`, `section`, `article`, `nav`, etc.)
-   - Avoiding everything being wrapped in generic `div`s with no structure
-
-4. **Structured Schema Score**
-   - Presence and correctness of structured data (for example, `Organization`, `Product`, `FAQPage`, etc.)
-   - Coverage of key entity types relevant to your site
-   - Validity and consistency
-
-5. **FAQ Score**
-   - Presence of FAQ sections where appropriate
-   - Use of FAQ patterns that help models map questions → answers
-   - Alignment with real user questions / tracked prompts
-
-Each dimension is scored between **0 and 100** for that page.
+The **Technical Structure Score** evaluates each crawled page across four dimensions that AI models use to understand your content. Pages are scored **0–100**, then aggregated to a project-level score.
 
 ---
 
-## Per-page total score formula
+## The four dimensions
 
-Once each dimension is scored, Mudra combines them using weighted contributions:
+### Schema (40 points)
 
-$\text{Page Score} =
-(\text{Metadata} \times 0.20) +
-(\text{Headings} \times 0.20) +
-(\text{Semantic HTML} \times 0.15) +
-(\text{Schema} \times 0.30) +
-(\text{FAQ} \times 0.15)$
+- **J1:** JSON-LD present on page (10 pts)
+- **J2:** Valid structure (8 pts)
+- **J3:** Relevant properties included (11 pts)
+- **J4:** Coverage of AEO-relevant schema types (11 pts)
 
-Where:
-- **Metadata** = Metadata Score (0–100)
-- **Headings** = Heading Score (0–100)
-- **Semantic HTML** = Semantic HTML Score (0–100)
-- **Schema** = Schema Score (0–100)
-- **FAQ** = FAQ Score (0–100)
+Morphiq Labs checks for 17 AEO-relevant schema types including `Organization`, `Product`, `FAQPage`, `HowTo`, `Article`, `SoftwareApplication`, `WebApplication`, `OfferCatalog`, `VideoObject`, `ItemList`, `Review`, and `Person`.
 
-The result is a **Page Score between 0 and 100**.
+### Metadata (30 points)
+
+- **M1:** Title tag present and descriptive (8 pts)
+- **M2:** Meta description present and aligned (8 pts)
+- **M3:** Canonical URL set (6 pts)
+- **M4:** Open Graph tags present (4 pts)
+- **M5:** Twitter Card tags present (4 pts)
+
+### FAQ (20 points)
+
+- Scored as `min(count × 5, 20)`
+- Only evaluated on relevant page types: home, pricing, features, product, solutions, blog
+- Contact, demo, login, signup, and legal pages are excluded
+
+### Content (10 points)
+
+- **C1:** Word count ≥ 300 (5 pts)
+- **C2:** At least 3 paragraphs (5 pts)
 
 ---
 
-## Why these weights?
+## Per-page total score
 
-The weights reflect how important each dimension is for AI understanding:
+Each page’s score is the sum of its four dimension scores, for a maximum of **100 points**:
 
-- **Schema (30%)** – Schema is often the most direct machine-readable signal; it’s weighted the highest.
-- **Metadata (20%) + Headings (20%)** – Titles and headings define what the page is “about” and how it’s structured.
-- **Semantic HTML (15%)** – Good HTML structure helps models parse content more reliably.
-- **FAQ (15%)** – FAQ-style blocks map directly to how people and models ask questions.
+$\text{Page Score} = \text{Schema (0–40)} + \text{Metadata (0–30)} + \text{FAQ (0–20)} + \text{Content (0–10)}$
 
-Together, they form a balanced view of how friendly each page is to AI crawlers and retrievers.
+---
+
+## Why these four?
+
+- **Schema (40 pts)** — The most direct machine-readable signal; weighted the highest.
+- **Metadata (30 pts)** — Helps models understand page purpose and intent.
+- **FAQ (20 pts)** — Maps directly to how users query AI models.
+- **Content (10 pts)** — Ensures pages have enough substance to be cited.
+
+Heading hierarchy and semantic HTML were excluded because users on platforms like Webflow and Shopify have limited control over them.
 
 ---
 
 ## From page scores to project score
 
-Mudra then aggregates per-page scores into a single **Technical Structure Score** for your project. By default, this is calculated as the average Page Score across the set of key pages Mudra crawls for your domain (for example, core product pages, pricing, docs, and other top surfaces).
+Morphiq Labs aggregates per-page scores into a single **Technical Structure Score** for your project — the average Page Score across the key pages Morphiq Labs crawls for your domain.
 
 This gives you a single number between **0 and 100** that reflects:
 
 > “On average, how well structured is our site for AI systems to crawl, parse, and reuse?”
+
+---
+
+## Score interpretation
+
+- **0–39:** Significant gaps — AI models may struggle to parse your pages
+- **40–69:** Partial coverage — some dimensions need attention
+- **70–100:** Well-structured — your site is readable by AI systems
 
